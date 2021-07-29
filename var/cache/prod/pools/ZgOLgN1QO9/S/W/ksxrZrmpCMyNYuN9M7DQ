@@ -1,0 +1,40 @@
+<?php //%255BApp%255CEntity%255CFilm%2524dateSortie%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['App\\Validator\\Constraints\\DateBetween'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('App\\Validator\\Constraints\\DateBetween')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'type' => [
+                'date',
+            ],
+            'dateMin' => [
+                1 => '01/01/1890',
+            ],
+            'dateMax' => [
+                1 => '?last day of December +15 years',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+                [
+                    'Default',
+                ],
+            ],
+            'message' => [
+                2 => 'La date de sortie doit être renseigné',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

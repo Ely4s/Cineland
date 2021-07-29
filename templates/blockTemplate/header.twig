@@ -1,0 +1,17 @@
+{% block header %}
+<div class="header">
+
+    <a href="{{ getPathIfRouteExists('index') }}"><div class="header_title">Cineland</div></a>
+
+    {% if app.request.attributes.get('_route') != 'index' %}
+    {% block header_icons %}
+        <div class="header_icons">
+            <a href="{{ getPathIfRouteExists('filmsMenu') }}"><img class="header_icon" src="/image/film-solid.svg"/></a>
+            <a href="{{ getPathIfRouteExists('genresMenu') }}"> <img class="header_icon" src="/image/theater-masks-solid.svg"/></a>
+            <a href="{{ getPathIfRouteExists('acteursMenu') }}"><img class="header_icon" src="/image/user-tie-solid.svg"/></a>
+        </div>
+    {% endblock %}
+    {% endif %}
+
+</div>
+{% endblock %}

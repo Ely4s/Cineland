@@ -1,0 +1,216 @@
+<?php //%255BApp%255CEntity%255CFilm%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Film',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Film',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\FilmRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'titre' => [
+                        'fieldName' => 'titre',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => true,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'titre',
+                    ],
+                    'duree' => [
+                        'fieldName' => 'duree',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'duree',
+                    ],
+                    'dateSortie' => [
+                        'fieldName' => 'dateSortie',
+                        'type' => 'date',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'date_sortie',
+                    ],
+                    'note' => [
+                        'fieldName' => 'note',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'note',
+                    ],
+                    'ageMinimal' => [
+                        'fieldName' => 'ageMinimal',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'age_minimal',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'titre' => 'titre',
+                    'duree' => 'duree',
+                    'date_sortie' => 'dateSortie',
+                    'note' => 'note',
+                    'age_minimal' => 'ageMinimal',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'titre' => 'titre',
+                    'duree' => 'duree',
+                    'dateSortie' => 'date_sortie',
+                    'note' => 'note',
+                    'ageMinimal' => 'age_minimal',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'film',
+                ],
+            ],
+            'associationMappings' => [
+                [
+                    'genre' => [
+                        'fieldName' => 'genre',
+                        'joinColumns' => [
+                            [
+                                'name' => 'genre_id',
+                                'unique' => false,
+                                'nullable' => false,
+                                'onDelete' => null,
+                                'columnDefinition' => null,
+                                'referencedColumnName' => 'id',
+                            ],
+                        ],
+                        'cascade' => [],
+                        'inversedBy' => 'films',
+                        'targetEntity' => 'App\\Entity\\Genre',
+                        'fetch' => 3,
+                        'type' => 2,
+                        'mappedBy' => null,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Film',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'sourceToTargetKeyColumns' => [
+                            'genre_id' => 'id',
+                        ],
+                        'joinColumnFieldNames' => [
+                            'genre_id' => 'genre_id',
+                        ],
+                        'targetToSourceKeyColumns' => [
+                            'id' => 'genre_id',
+                        ],
+                        'orphanRemoval' => false,
+                    ],
+                    'acteurs' => [
+                        'fieldName' => 'acteurs',
+                        'joinTable' => [
+                            'name' => 'film_acteur',
+                            'joinColumns' => [
+                                [
+                                    'name' => 'film_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                            'inverseJoinColumns' => [
+                                [
+                                    'name' => 'acteur_id',
+                                    'referencedColumnName' => 'id',
+                                    'onDelete' => 'CASCADE',
+                                ],
+                            ],
+                        ],
+                        'targetEntity' => 'App\\Entity\\Acteur',
+                        'mappedBy' => null,
+                        'inversedBy' => 'films',
+                        'cascade' => [],
+                        'orphanRemoval' => false,
+                        'fetch' => 3,
+                        'orderBy' => [
+                            'nomPrenom' => 'ASC',
+                        ],
+                        'type' => 8,
+                        'isOwningSide' => true,
+                        'sourceEntity' => 'App\\Entity\\Film',
+                        'isCascadeRemove' => false,
+                        'isCascadePersist' => false,
+                        'isCascadeRefresh' => false,
+                        'isCascadeMerge' => false,
+                        'isCascadeDetach' => false,
+                        'joinTableColumns' => [
+                            'film_id',
+                            'acteur_id',
+                        ],
+                        'isOnDeleteCascade' => true,
+                        'relationToSourceKeyColumns' => [
+                            'film_id' => 'id',
+                        ],
+                        'relationToTargetKeyColumns' => [
+                            'acteur_id' => 'id',
+                        ],
+                    ],
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

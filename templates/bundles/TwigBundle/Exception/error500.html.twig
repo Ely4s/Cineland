@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% set containerWithTitle = {"title" : "Oups !"} %}
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_title %}
+            Erreur 500 : Une erreur s'est produite ...
+        {% endblock %}
+        {% block containerWithTitle_content %}
+            Pour revenir à l'accueil cliquez <a class="txt-lnk-clr" href="{{ getPathIfRouteExists('index') }}">ici</a>
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+<?php //%255BApp%255CEntity%255CFilm%2524duree%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Range'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Range')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'type' => [
+                'integer',
+            ],
+            'message' => [
+                1 => 'La durée doit être renseigné',
+            ],
+            'groups' => [
+                1 => [
+                    'Default',
+                ],
+                [
+                    'Default',
+                ],
+            ],
+            'minMessage' => [
+                2 => 'La durée doit être d\'au moins {{ min }} min',
+            ],
+            'maxMessage' => [
+                2 => 'La durée doit être d\'au plus {{ max }} min',
+            ],
+            'min' => [
+                2 => '1',
+            ],
+            'max' => [
+                2 => '1000000',
+            ],
+            'deprecatedMinMessageSet' => [
+                2 => true,
+            ],
+            'deprecatedMaxMessageSet' => [
+                2 => true,
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];

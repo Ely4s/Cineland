@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_content %}
+
+            {% for genre in genres %}
+                <div class="fld_cntnr">
+
+                    <div class="fld_grp">
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Nom :</div>
+                            <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('genreActions',{ 'nom' : (genre.nom)}) }}">{{ genre.nom }}</a></div>
+                        </div>
+
+                        <div class="fld fld-mlt">
+                            <div class="fld_lbl">Films du genre :</div>
+                            <div class="fld_otpt fld_otpt-mlt">
+                                {% if genre.films|length > 0 %}
+                                {% for movie in genre.films %}
+                                    <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('filmActions',{ 'titre' : (movie.titre)}) }}">{{ movie.titre }}</a></div>
+                                {% endfor %}
+                                {% else %}
+                                    <div class="fld_otpt">Aucun film dans ce genre</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+            {% if genres|length == 0 %}
+                {{ entitiesOneFieldResult.messageIfEmpty }}
+            {% endif %}
+
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

@@ -1,0 +1,87 @@
+<?php //%255B5f0ead6ec807b37f7fbe37b417857b4a%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Query\\ParserResult'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ParserResult')),
+        clone ($p['Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\Exec\\SingleSelectExecutor')),
+        clone ($p['Doctrine\\ORM\\Query\\ResultSetMapping'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Query\\ResultSetMapping')),
+    ],
+    null,
+    [
+        'Doctrine\\ORM\\Query\\ParserResult' => [
+            '_sqlExecutor' => [
+                $o[1],
+            ],
+            '_resultSetMapping' => [
+                $o[2],
+            ],
+            '_parameterMappings' => [
+                [
+                    'titre' => [
+                        0,
+                    ],
+                ],
+            ],
+        ],
+        'Doctrine\\ORM\\Query\\Exec\\AbstractSqlExecutor' => [
+            '_sqlStatements' => [
+                1 => 'SELECT DISTINCT f0_.id AS id_0, f0_.titre AS titre_1, f0_.duree AS duree_2, f0_.date_sortie AS date_sortie_3, f0_.note AS note_4, f0_.age_minimal AS age_minimal_5, f0_.genre_id AS genre_id_6 FROM film f0_ WHERE f0_.titre LIKE ?',
+            ],
+        ],
+        'stdClass' => [
+            'aliasMap' => [
+                2 => [
+                    'f' => 'App\\Entity\\Film',
+                ],
+            ],
+            'fieldMappings' => [
+                2 => [
+                    'id_0' => 'id',
+                    'titre_1' => 'titre',
+                    'duree_2' => 'duree',
+                    'date_sortie_3' => 'dateSortie',
+                    'note_4' => 'note',
+                    'age_minimal_5' => 'ageMinimal',
+                ],
+            ],
+            'typeMappings' => [
+                2 => [
+                    'genre_id_6' => 'integer',
+                ],
+            ],
+            'entityMappings' => [
+                2 => [
+                    'f' => null,
+                ],
+            ],
+            'metaMappings' => [
+                2 => [
+                    'genre_id_6' => 'genre_id',
+                ],
+            ],
+            'columnOwnerMap' => [
+                2 => [
+                    'id_0' => 'f',
+                    'titre_1' => 'f',
+                    'duree_2' => 'f',
+                    'date_sortie_3' => 'f',
+                    'note_4' => 'f',
+                    'age_minimal_5' => 'f',
+                    'genre_id_6' => 'f',
+                ],
+            ],
+            'declaringClasses' => [
+                2 => [
+                    'id_0' => 'App\\Entity\\Film',
+                    'titre_1' => 'App\\Entity\\Film',
+                    'duree_2' => 'App\\Entity\\Film',
+                    'date_sortie_3' => 'App\\Entity\\Film',
+                    'note_4' => 'App\\Entity\\Film',
+                    'age_minimal_5' => 'App\\Entity\\Film',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

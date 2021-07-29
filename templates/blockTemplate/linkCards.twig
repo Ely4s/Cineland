@@ -1,0 +1,14 @@
+{% block linkCards %}
+<div class="linkCards">
+
+    {% for linkCards_item in linkCards %}
+        <a href="{% block linkCards_link %}{{ getPathIfRouteExists(linkCards_item.route,linkCards_item.routeArgs) }}{% endblock %}" class="linkCards_item">
+            <div class="linkCards_itemTitle">{% block linkCards_itemTitle %}{{ linkCards_item.title|default("") }}{% endblock %}</div>
+            {% if linkCards_item.imageName != null %}
+            {% block linkCards_Image %}<div class="linkCards_itemImage"><img src="/image/{% block linkCards_itemImageName %}{{ linkCards_item.imageName }}{% endblock %}" alt=""/></div>{% endblock %}
+            {% endif %}
+        </a>
+    {% endfor %}
+
+</div>
+{% endblock %}

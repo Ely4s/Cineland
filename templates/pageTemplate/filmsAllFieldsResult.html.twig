@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_content %}
+
+            <div class="cntnr onChld-ntLst-mrgn-bttm">
+            {% for movie in movies %}
+            <div class="fld_cntnr">
+
+                    <div class="fld_grp">
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Titre :</div>
+                            <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('filmActions',{ 'titre' : (movie.titre)}) }}">{{ movie.titre }}</a></div>
+                        </div>
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Durée (en minutes) :</div>
+                            <div class="fld_otpt">{{ movie.duree }}</div>
+                        </div>
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Date de sorite :</div>
+                            <div class="fld_otpt">{{ movie.dateSortie|date('d/m/Y') }}</div>
+                        </div>
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Note :</div>
+                            <div class="fld_otpt">{{ movie.note }}</div>
+                        </div>
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Âge minimal :</div>
+                            <div class="fld_otpt">{{ movie.ageMinimal }}</div>
+                        </div>
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Genre :</div>
+                            <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('genreActions',{ 'nom' : (movie.genre)}) }}">{{ movie.genre }}</a></div>
+                        </div>
+
+                        <div class="fld fld-mlt">
+                            <div class="fld_lbl">Casting :</div>
+                            <div class="fld_otpt fld_otpt-mlt">
+                            {% if movie.acteurs|length > 0 %}
+                                {% for actor in movie.acteurs %}
+                                    <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('acteurActions',{ 'nomPrenom' : (actor.nomPrenom)}) }}">{{ actor.nomPrenom }}</a></div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="fld_otpt">Aucun acteur dans le casting de ce film</div>
+                            {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            {% endfor %}
+            </div>
+
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

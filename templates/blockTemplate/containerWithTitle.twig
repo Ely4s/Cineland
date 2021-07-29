@@ -1,0 +1,6 @@
+{% block containerWithTitle %}
+<div class="containerWithTitle">
+    <div class="containerWithTitle_title">{% block containerWithTitle_title %}{{ containerWithTitle.title }}{% endblock %}</div>
+    <div class="containerWithTitle_content">{% block containerWithTitle_content %}{% endblock %}</div>
+</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html.twig" %}
+
+{% block CONTENT %}
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_content %}{% include 'blockTemplate/linkCards.twig' %}{% endblock %}
+    {% endembed %}
+{% endblock %}

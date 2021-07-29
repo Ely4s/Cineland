@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block CONTENT %}
+
+    {% set linkCards = [] %}
+    {% for entity in entitiesOneFieldResult.entities %}
+        {% set linkCards = linkCards|merge([{ 'title': (attribute(entity,entitiesOneFieldResult.routeParam)), 'imageName' : null, 'route' : (entitiesOneFieldResult.route), 'routeArgs' : { (entitiesOneFieldResult.routeParam) : (attribute(entity,entitiesOneFieldResult.routeParam)) } }]) %}
+    {% endfor %}
+
+    {% set form = form|default(null) %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+    {% block containerWithTitle_content %}
+
+        {% if form is defined and form is not null %}{{ form(form) }}<br>{% endif %}
+
+        {% if ( form is null and entitiesOneFieldResult.entities|length == 0 ) or ( form is not null and entitiesOneFieldResult.entities|length == 0 and form.vars.submitted == true ) %}{{ entitiesOneFieldResult.messageIfEmpty }}{% endif %}
+        {% include 'blockTemplate/linkCards.twig' %}
+
+    {% endblock %}
+    {% endembed %}
+
+{% endblock %}

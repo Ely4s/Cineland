@@ -1,0 +1,312 @@
+<?php //App.Entity.Film
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Validator\\Constraints\\NotBlank'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\NotBlank')),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Length'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Length')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Range'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Range')),
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone ($p['App\\Validator\\Constraints\\DateBetween'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('App\\Validator\\Constraints\\DateBetween')),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\Choice'],
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone $p['Symfony\\Component\\Validator\\Constraints\\NotBlank'],
+        $f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'](),
+        clone ($p['Symfony\\Component\\Validator\\Constraints\\Unique'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Unique')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Film',
+                'titre',
+                4 => 'duree',
+                7 => 'dateSortie',
+                10 => 'note',
+                13 => 'ageMinimal',
+                16 => 'genre',
+                18 => 'acteurs',
+            ],
+            'defaultGroup' => [
+                'Film',
+            ],
+            'members' => [
+                [
+                    'titre' => [
+                        $o[1],
+                    ],
+                    'duree' => [
+                        $o[4],
+                    ],
+                    'dateSortie' => [
+                        $o[7],
+                    ],
+                    'note' => [
+                        $o[10],
+                    ],
+                    'ageMinimal' => [
+                        $o[13],
+                    ],
+                    'genre' => [
+                        $o[16],
+                    ],
+                    'acteurs' => [
+                        $o[18],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'titre' => $o[1],
+                    'duree' => $o[4],
+                    'dateSortie' => $o[7],
+                    'note' => $o[10],
+                    'ageMinimal' => $o[13],
+                    'genre' => $o[16],
+                    'acteurs' => $o[18],
+                ],
+            ],
+            'constraints' => [
+                [
+                    $o[20],
+                ],
+                [
+                    $o[2],
+                    $o[3],
+                ],
+                4 => [
+                    $o[5],
+                    $o[6],
+                ],
+                7 => [
+                    $o[8],
+                    $o[9],
+                ],
+                10 => [
+                    $o[11],
+                    $o[12],
+                ],
+                13 => [
+                    $o[14],
+                    $o[15],
+                ],
+                16 => [
+                    $o[17],
+                ],
+                18 => [
+                    $o[19],
+                ],
+            ],
+            'constraintsByGroup' => [
+                [
+                    'Default' => [
+                        $o[20],
+                    ],
+                    'Film' => [
+                        $o[20],
+                    ],
+                ],
+                [
+                    'Default' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                    'Film' => [
+                        $o[2],
+                        $o[3],
+                    ],
+                ],
+                4 => [
+                    'Default' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                    'Film' => [
+                        $o[5],
+                        $o[6],
+                    ],
+                ],
+                7 => [
+                    'Default' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                    'Film' => [
+                        $o[8],
+                        $o[9],
+                    ],
+                ],
+                10 => [
+                    'Default' => [
+                        $o[11],
+                        $o[12],
+                    ],
+                    'Film' => [
+                        $o[11],
+                        $o[12],
+                    ],
+                ],
+                13 => [
+                    'Default' => [
+                        $o[14],
+                        $o[15],
+                    ],
+                    'Film' => [
+                        $o[14],
+                        $o[15],
+                    ],
+                ],
+                16 => [
+                    'Default' => [
+                        $o[17],
+                    ],
+                    'Film' => [
+                        $o[17],
+                    ],
+                ],
+                18 => [
+                    'Default' => [
+                        $o[19],
+                    ],
+                    'Film' => [
+                        $o[19],
+                    ],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Film',
+                4 => 'App\\Entity\\Film',
+                7 => 'App\\Entity\\Film',
+                10 => 'App\\Entity\\Film',
+                13 => 'App\\Entity\\Film',
+                16 => 'App\\Entity\\Film',
+                18 => 'App\\Entity\\Film',
+            ],
+            'property' => [
+                1 => 'titre',
+                4 => 'duree',
+                7 => 'dateSortie',
+                10 => 'note',
+                13 => 'ageMinimal',
+                16 => 'genre',
+                18 => 'acteurs',
+            ],
+            'message' => [
+                2 => 'Le titre doit être renseigné',
+                5 => 'La durée doit être renseigné',
+                9 => 'La date de sortie doit être renseigné',
+                11 => 'La note est invalide. Elle doit être comprise entre 0 et 20',
+                'La note doit être renseigné',
+                14 => 'La signalétique jeunesse saisie n\'existe pas',
+                'L\'âge minimal doit être renseigné',
+                17 => 'Le genre doit être renseigné',
+                19 => 'Ce film a déjà cet acteur dans son casting',
+                'Saisie invalide. Ce film existe peut-être déjà.',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+                5 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+                8 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+                11 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+                14 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+                17 => [
+                    'Default',
+                    'Film',
+                ],
+                19 => [
+                    'Default',
+                    'Film',
+                ],
+                [
+                    'Default',
+                    'Film',
+                ],
+            ],
+            'maxMessage' => [
+                3 => 'Le titre peut faire au plus {{ max }} caractère',
+                6 => 'La durée doit être d\'au plus {{ max }} min',
+            ],
+            'minMessage' => [
+                3 => 'Le titre doit faire au moins {{ min }} caratère',
+                6 => 'La durée doit être d\'au moins {{ min }} min',
+            ],
+            'max' => [
+                3 => '255',
+                6 => '1000000',
+            ],
+            'min' => [
+                3 => '1',
+                6 => '1',
+            ],
+            'allowEmptyString' => [
+                3 => false,
+            ],
+            'deprecatedMinMessageSet' => [
+                6 => true,
+            ],
+            'deprecatedMaxMessageSet' => [
+                6 => true,
+            ],
+            'dateMin' => [
+                8 => '01/01/1890',
+            ],
+            'dateMax' => [
+                8 => '?last day of December +15 years',
+            ],
+            'callback' => [
+                11 => 'getNoteType',
+                14 => 'getAgeMinimalType',
+            ],
+            'fields' => [
+                20 => 'titre',
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

@@ -1,0 +1,166 @@
+# CINELAND #
+
+index:
+ path: /accueil
+ controller: App\Controller\CinelandController::index
+
+init:
+ path: /init
+ controller: App\Controller\CinelandController::init
+
+# ACTEUR #
+
+acteursMenu:
+ path: /acteurs
+ controller: App\Controller\ActeurController::menu
+
+acteursSelect:
+ path: /acteurs/selectioner
+ controller: App\Controller\ActeurController::select
+ defaults:
+
+acteurActions:
+ path: /acteur/{nomPrenom}
+ controller: App\Controller\ActeurController::actions
+
+acteursAdd:
+ path: /acteurs/ajouter
+ controller: App\Controller\ActeurController::add
+
+acteurUpdate:
+ path: /acteur/{nomPrenom}/modifier
+ controller: App\Controller\ActeurController::update
+
+acteurRemove:
+ path: /acteur/{nomPrenom}/supprimer
+ controller: App\Controller\ActeurController::remove
+
+acteurUpdateAgeMinimalAllFilms:
+ path: /acteur/{nomPrenom}/modifierAgeMinimalDesFilms
+ controller: App\Controller\ActeurController::updateAgeMinimalAllFilms
+
+acteursShowAll:
+ path: /acteurs/voir
+ controller: App\Controller\ActeurController::showAll
+
+acteurShowOne:
+ path: /acteur/{nomPrenom}/voir
+ controller: App\Controller\ActeurController::showOne
+
+acteursHaveCountFilmsGreaterEqualThree:
+ path: /acteurs/joueDansAuMoins3Films
+ controller: App\Controller\ActeurController::haveCountFilmsGreaterEqualThree
+
+acteursShowFilmsIfHave:
+ path: /acteurs/films
+ controller: App\Controller\ActeurController::showFilmsIfHave
+
+acteurShowGenreWhereIsTwice:
+ path: /acteur/{nomPrenom}/voirGenreOuIlEstDeuxFois
+ controller: App\Controller\ActeurController::showGenreWhereIsTwice
+
+acteursShowGenreWhereActeurHaveFilmIn:
+ path: /acteurs/voirLesGenres
+ controller: App\Controller\ActeurController::showGenreWhereActeursHaveFilmIn
+
+acteurShowSumOfFilmDureeIn:
+ path: /acteur/{nomPrenom}/sommesDesDureesDesFilms
+ controller: App\Controller\ActeurController::showSumOfFilmDureeIn
+
+# FILM #
+
+filmsMenu:
+ path: /films
+ controller: App\Controller\FilmController::menu
+
+filmsSelect:
+ path: /films/selectioner
+ controller: App\Controller\FilmController::select
+ defaults:
+
+filmActions:
+ path: /film/{titre}
+ controller: App\Controller\FilmController::actions
+
+filmsAdd:
+ path: /films/ajouter
+ controller: App\Controller\FilmController::add
+
+filmUpdate:
+ path: /film/{titre}/modifier
+ controller: App\Controller\FilmController::update
+
+filmRemove:
+ path: /film/{titre}/supprimer
+ controller: App\Controller\FilmController::remove
+
+filmUpdateNote:
+ path: /film/{titre}/modifierNote
+ controller: App\Controller\FilmController::updateNote
+
+filmsShowAll:
+ path: /films/voir
+ controller: App\Controller\FilmController::showAll
+
+filmShowOne:
+ path: /film/{titre}/voir
+ controller: App\Controller\FilmController::showOne
+
+filmsDateBetweenTwo:
+ path: /films/entreDeuxDates
+ controller: App\Controller\FilmController::dateBetweenTwo
+
+filmsDateInfTo:
+ path: /films/avantUneDate
+ controller: App\Controller\FilmController::dateInfTo
+
+filmsHaveTheseTwoActors:
+ path: /films/avecSesDeuxActeurs
+ controller: App\Controller\FilmController::haveTheseTwoActors
+
+filmsSearch:
+ path: /films/rechercherUnFilm
+ controller: App\Controller\FilmController::filmsSearch
+
+filmShowActeurs:
+ path: /film/{titre}/voirActeurs
+ controller: App\Controller\FilmController::showActeurs
+
+# GENRE #
+
+genresMenu:
+ path: /genres
+ controller: App\Controller\GenreController::menu
+
+genresSelect:
+ path: /genres/selectioner
+ controller: App\Controller\GenreController::select
+ defaults:
+
+genreActions:
+ path: /genre/{nom}
+ controller: App\Controller\GenreController::actions
+
+genresAdd:
+ path: /genres/ajouter
+ controller: App\Controller\GenreController::add
+
+genreUpdate:
+ path: /genre/{nom}/modifier
+ controller: App\Controller\GenreController::update
+
+genreRemove:
+ path: /genre/{nom}/supprimer
+ controller: App\Controller\GenreController::remove
+
+genresShowAll:
+ path: /genres/voir
+ controller: App\Controller\GenreController::showAll
+
+genreShowAvgOfFilmDureeIn:
+ path: /genre/{nom}/moyenneDesDureeDesFilms
+ controller: App\Controller\GenreController::showAvgOfFilmDureeIn
+
+genreShowFilmIn:
+ path: /genre/{nom}/films
+ controller: App\Controller\GenreController::showFilmIn

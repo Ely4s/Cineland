@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% set containerWithTitle = {"title" : "Oups !"} %}
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_title %}
+            Erreur 404 : Oups ! Cette page n'a pas l'air d'exister ...
+        {% endblock %}
+        {% block containerWithTitle_content %}
+            Pour revenir à l'accueil cliquez <a class="txt-lnk-clr" href="{{ getPathIfRouteExists('index') }}">ici</a>
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

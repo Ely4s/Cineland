@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+    {% block HEAD %}
+
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=600, user-scalable=no'/>
+        {% block STYLESHEETS %}
+        <link href="{{  asset('/css/style.css')}}?{{ random(0, 10000000) }}" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% endblock %}
+
+        <title>{% block title %}{{ containerWithTitle.title }}{% endblock %}</title>
+
+    {% endblock %}
+    </head>
+
+    <body>
+    {% block BODY %}
+
+        <div id="CONTAINER">
+
+            <div id="HEADER">
+            {% block HEADER %}
+                {% include 'blockTemplate/header.twig' %}
+            {% endblock %}
+            </div>
+
+            <div id="CONTENT">
+
+                <div class="sccss">
+                {% for message in app.session.flashbag.get('success') %}
+                    <div class="sccss_mssg">{{ message }}</div>
+                {% endfor %}
+                </div>
+
+            {% block CONTENT %}
+            {% endblock %}
+
+            </div>
+
+            <div id="FOOTER">
+            {% block FOOTER %}
+                {% include 'blockTemplate/footer.twig' %}
+            {% endblock %}
+            </div>
+
+        </div>
+
+        {% block JAVASCRIPTS %}<script src="{{  asset('/js/script.js') }}"></script> {% endblock %}
+
+    {% endblock %}
+    </body>
+
+</html>

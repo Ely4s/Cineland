@@ -1,0 +1,3 @@
+cineland:
+ resource: routes/cineland/routes.yaml
+ prefix: /cineland

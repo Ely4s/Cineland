@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+        {% block containerWithTitle_content %}
+
+            {% set onlyFilms = onlyFilms|default(false) %}
+            {% for actor in actors %}
+                <div class="fld_cntnr">
+
+                    <div class="fld_grp">
+
+                        <div class="fld fld-smpl fld-inln">
+                            <div class="fld_lbl">Nom Prénom :</div>
+                            <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('acteurActions',{ 'nomPrenom' : (actor.nomPrenom)}) }}">{{ actor.nomPrenom }}</a></div>
+                        </div>
+
+                        <div class="fld fld-mlt">
+                            <div class="fld_lbl">Genres :</div>
+                            <div class="fld_otpt fld_otpt-mlt">
+                                {% for genre in actor.genres %}
+                                    <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('genreActions',{ 'nom' : (genre.nom)}) }}">{{ genre.nom }}</a></div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+            {% if actors|length == 0 and entitiesOneFieldResult is defined%}
+                {{ entitiesOneFieldResult.messageIfEmpty }}
+            {% endif %}
+        {% endblock %}
+    {% endembed %}
+
+{% endblock %}

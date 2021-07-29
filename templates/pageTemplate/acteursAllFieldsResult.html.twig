@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block CONTENT %}
+
+    {% embed 'blockTemplate/containerWithTitle.twig' %}
+    {% block containerWithTitle_content %}
+
+    {% set onlyFilms = onlyFilms|default(false) %}
+    {% for actor in actors %}
+    <div class="fld_cntnr">
+
+            <div class="fld_grp">
+
+                <div class="fld fld-smpl fld-inln">
+                    <div class="fld_lbl">Nom Prénom :</div>
+                    <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('acteurActions',{ 'nomPrenom' : (actor.nomPrenom)}) }}">{{ actor.nomPrenom }}</a></div>
+                </div>
+
+                {% if onlyFilms != true %}
+                <div class="fld fld-smpl fld-inln">
+                    <div class="fld_lbl">Date de naissance :</div>
+                    <div class="fld_otpt">{{ actor.dateNaissance|date('d/m/Y') }}</div>
+                </div>
+
+                <div class="fld fld-smpl fld-inln">
+                    <div class="fld_lbl">Nationalité :</div>
+                    <div class="fld_otpt">{{ actor.nationalite }}</div>
+                </div>
+                {% endif %}
+                <div class="fld fld-mlt">
+                    <div class="fld_lbl">Filmographie :</div>
+                    <div class="fld_otpt fld_otpt-mlt">
+                    {% if actor.films|length > 0 %}
+                        {% for movie in actor.films %}
+                            <div class="fld_otpt"><a class="txt-lnk-clr txt-lnk-ndrln" href="{{ getPathIfRouteExists('filmActions',{ 'titre' : (movie.titre)}) }}">{{ movie.titre }}</a></div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="fld_otpt">Aucun film dans la filmographie de cet acteur</div>
+                    {% endif %}
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+    {% endfor %}
+    {% if actors|length == 0 %}
+        {{ entitiesOneFieldResult.messageIfEmpty }}
+    {% endif %}
+
+    {% endblock %}
+    {% endembed %}
+
+{% endblock %}
